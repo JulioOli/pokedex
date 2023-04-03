@@ -17,7 +17,7 @@ export const Home = () => {
     const getPokemons = () => {
          //essa é a URL com os 151 primeiros pokemons da API que eu estou usando
     axios.get("https://pokeapi.co/api/v2/pokemon?limit=151&offset=0")
-    .then((res) => console.log(res) //no fim quando a promise for "cumprida", o then me retorna o que eu pedi da API
+    .then((res) => setPokemons(res.data.results) //no fim quando a promise for "cumprida", o then me retorna o que eu pedi da API
     .catch((err) => console.log(err))) //caso acontecer algum problema, a promise retorna um erro
     }
 
